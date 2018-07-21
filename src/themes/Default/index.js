@@ -8,9 +8,7 @@ export default ({children}) => (
       <Link to="/about">About</Link>
     </nav>
     <div className="container">
-      <div className="card">
-        {children}
-      </div>
+      {children}
     </div>
     <hr/>
     <footer>
