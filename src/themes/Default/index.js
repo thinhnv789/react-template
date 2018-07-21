@@ -1,13 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { devices } from './../../helpers/common';
+import HeaderDesktop from '../../components/Header/Desktop';
+
+const navItems = [
+  {
+    link: '/',
+    name: 'Home'
+  },
+  {
+    link: '/about',
+    name: 'About'
+  }
+];
 
 export default ({children}) => (
-  <div className="flex-container">
-    <nav>
-      <Link to="/" >Home</Link>
-      <Link to="/about">About</Link>
-    </nav>
-    <div className="container">
+  <div className="wrapper">
+    {
+      (window.device !== devices.DESKTOP) ? null : <HeaderDesktop navItems={navItems}/>
+    }
+    <div className="main">
       {children}
     </div>
     <hr/>

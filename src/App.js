@@ -9,7 +9,7 @@ const About = () => import('./pages/About');
 
 class App extends Component {
   render() {
-    console.log('home', Home);
+    console.log('device', this.props.device);
     return (
       <Router>
         <AppTemplate>

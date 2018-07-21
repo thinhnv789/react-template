@@ -13,11 +13,17 @@ class LazyLoad extends Component {
         document.addEventListener('scroll', this.handleScroll);
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.handleScroll);
+    }
+
     handleScroll = (event) => {
         event.preventDefault();
         if (!this.state.isLoad && this.isInViewport(this.lazyLoadComponent)) {
             this.setState({
                 isLoad: true
+            }, () => {
+                document.removeEventListener('scroll', this.handleScroll);
             });
         }
     }
