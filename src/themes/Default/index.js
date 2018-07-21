@@ -1,6 +1,7 @@
 import React from 'react';
 import { devices } from './../../helpers/common';
 import HeaderDesktop from '../../components/Header/Desktop';
+import HeaderMobile from '../../components/Header/Mobile';
 
 const navItems = [
   {
@@ -16,7 +17,7 @@ const navItems = [
 export default ({children}) => (
   <div className="wrapper">
     {
-      (window.device !== devices.DESKTOP) ? null : <HeaderDesktop navItems={navItems}/>
+      (window.device === devices.MOBILE) ? <HeaderMobile navItems={navItems}/> : <HeaderDesktop navItems={navItems}/>
     }
     <div className="main">
       {children}
