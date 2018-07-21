@@ -10,13 +10,7 @@ class LazyLoad extends Component {
     }
 
     componentDidMount() {
-        if (!this.state.isLoad && this.isInViewport(this.lazyLoadComponent)) {
-            this.setState({
-                isLoad: true
-            });
-        } else {
-            document.addEventListener('scroll', this.handleScroll);
-        }
+        document.addEventListener('scroll', this.handleScroll);
     }
 
     handleScroll = (event) => {
