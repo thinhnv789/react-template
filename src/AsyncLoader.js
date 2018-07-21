@@ -11,7 +11,6 @@ export default class AsyncLoader extends PureComponent {
   }
 
   componentWillMount() {
-    console.log('moduleProvider', this.props.moduleProvider().then((t) => console.log('t')));
     if(!this.state.Component) {
       this.props.moduleProvider().then( ({Component}) => this.setState({ Component }));
     }
