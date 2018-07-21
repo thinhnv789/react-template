@@ -32,6 +32,7 @@ class LazyLoad extends Component {
         if (!element) return false;
         const top = element.getBoundingClientRect().top;
         console.log('Topttt', top);
+        console.log('height', window.innerHeight);
         return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
     }
 
